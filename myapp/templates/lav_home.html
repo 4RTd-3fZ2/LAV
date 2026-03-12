@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAV</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'app_myapp/img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'app_myapp/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'app_myapp/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'app_myapp/css/styles_home/templates.css' %}">
+    <link rel="stylesheet" href="{% static 'app_myapp/css/styles_home/molecules.css' %}">
+    <link rel="stylesheet" href="{% static 'app_myapp/css/styles_home/atoms.css' %}">
+    <!-- NOTE: CSS DE NUESTRA LIBRERIA LVR-->
+    <link rel="stylesheet" href="{% static 'app_myapp/lvr-static/css/prism/prism.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app_myapp/lvr-static/css/lvr-main.css' %}">
+</head>
+<body>
+    <!-- ANCHOR : REPRODUCTOR DE VIDEO -->
+    <!-- NOTE : AQUI IRA EL VIDEO REPRODUCTOR -->
+    <div id="lav-video-reproductor"></div>
+
+
+    <!-- ANCHOR : MAIN DE VIDEOS -->
+    <div class="style_RES_CONT">
+        <div class="template_cont_navbar">
+            <section>
+                <h1 id="lav_logo"><!-- NOTE: ES-LAV --></h1>
+                <select id="category">
+                    <option value="">Categoria</option>
+                    <!-- STUB : OBTENEMOS LAS CATEGORIAS DE LA BASE DE DATOS-->
+                </select>
+                <select id="SelectSection">
+                    <option value="all">Sección - Todos</option>
+                </select>
+                <select id="stacks">
+                    <!-- STUB : EL COMBO BOX SE GENERA CON JS -->
+                </select>
+            </section>
+            <section>
+                <div class="atom_buscdor">
+                    <input type="text" name="" id="id_search", placeholder="Buscar">
+                    <button id="btn_search" ><img src="{% static 'app_myapp/img/icon_10.png' %}" alt=""></button>
+                </div>
+            </section>
+        </div>
+        <div id="cont_videos" class="template_cont_body">
+            <!-- NOTE: LISTA DE VIDEOS -->
+        </div>
+        <div class="molecules_footer">
+            <button id="btn_max">
+                <img src="{% static 'app_myapp/img/icon_04.png' %}" alt="">
+            </button>
+        </div>
+    </div>
+</body>
+<!-- NOTE : SCRIPTS DE NUESTRA LIBREIA LVR -->
+<script src="{% static 'app_myapp/lvr-static/js/libraries/marked.min.js' %}"></script>
+<!-- NOTE : PARA DARLE COLOR AL CODIGO -->
+<script src="{% static 'app_myapp/lvr-static/js/libraries/prism/prism.min.js' %}"></script>
+<!-- NOTE : PLUGIN DE PRISM PARA PINTAR CÓDIGO JS-->
+<script src="{% static 'app_myapp/lvr-static/js/libraries/prism/prism-javascript.min.js' %}"></script>
+<!-- NOTE : LIBRERIA DE MONACO -->
+<script src="{% static 'app_myapp/lvr-static/js/libraries/monaco-editor_v0.33.0/vs/loader.min.js' %}"></script>
+<!-- NOTE : MY LIBRARY -->
+<!-- <script type="module" src="{% static 'lvr-static/js/lvr-loader.js' %}"></script> -->
+
+
+
+<!-- NOTE : MAIN PRINCIPAL -->
+<script type="module" src="{% static 'app_myapp/js/scripts_home/main.js' %}"></script>
+</html>

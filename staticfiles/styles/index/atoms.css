@@ -1,0 +1,159 @@
+.atoms_navSettings {
+    background: black;
+    background: var(--color-tres_2);
+    width: 100%;
+    padding: 5px 10px;
+    margin: 10px auto  0 auto;
+    width: calc((100% - 20px) - 20px);
+    border: 1px solid var(--color-border_1);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.atom_finished {
+    background: #ffaa0071;
+}
+
+.atom_comboboxStack {
+    margin: 0 10px 0 0;
+    background: var(--color-dos);
+    color: var(--color-white);
+    border-radius: 5px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+:root {
+    --color_menuConfig-background: #303942;
+    --color_menuConfig-border: #545759;
+    --color_menuConfig-text_1: #fff;
+    --color_general-modulos_2: #F98526;
+    --color_code_background: #282C34;
+    --color_text: #c4c4c4;
+    --color_general_03: #0FEBE9;
+
+}
+
+.cedema_dialog {
+    width: 500px;
+    padding: 20px;
+    background: var(--color_menuConfig-background);
+    border: 1px solid var(--color_menuConfig-border);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: var(--color_menuConfig-text_1);
+
+    /* TABLET SIZE */
+    @media (max-width: 1050px) {
+        width: 500px;
+    }
+    /* MOVIL SIZE */
+    @media (max-width: 580px) {
+        width: 85%;
+    }
+
+    .dialogHeader {
+        display: flex;
+        justify-content: space-between;
+
+        & aside {
+            height: 40px;
+            background: var(--color_general-modulos_2);
+            width: 5px;
+        }
+        & h1 {
+            margin: auto 0;
+            font-size: 25px;
+        }
+        .close {
+            display: flex;
+            border: none;
+            outline: none;
+            height: 40px;
+            padding: 10px;
+            background: var(--color_general-modulos_2);
+            border-radius: 6px;
+            margin: auto 0;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    & section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &::backdrop {
+        background: linear-gradient(135deg, #1313193b, #1313193b);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    & p {
+        font-size: smaller;
+        margin: 5px 0;
+    }
+    
+    .select {
+        /* background: red; */
+        display: flex;
+        justify-content: center;
+
+        & select {
+            margin: 0 10px;
+            padding: 5px 10px;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+
+        & p {
+            margin: 5px auto;
+        }
+
+        & span {
+            color: var(--color_general-modulos_2);
+            font-weight: bold;
+        }
+    }
+
+    & button {
+        background-color: var(--color_general_03);
+        color: var(--color_menuConfig-background);
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 3px;
+        margin: 20px auto 0 auto;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.atom_conservarCambios {
+    background: var(--color-tres_2);
+    margin: 0 auto 10px 0;
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+    border-radius: 20px;
+    font-size: smaller;
+
+    & label {
+        /* color: blue; */
+        margin: 0;
+    }
+    & input[type="checkbox"] {
+        margin: 0 5px 0 0;
+    }
+}

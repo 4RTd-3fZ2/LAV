@@ -1,0 +1,340 @@
+.lvr-organism_vide_cont {
+    background: black;
+    border-radius: 10px;
+    min-width: 10px;
+    max-width: calc((100vw - 400px) - 20px);
+    min-height: 10px;
+    max-height: 100vh;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    & video {
+        width: 100%;
+        height: 100%;
+        outline: none;
+    }
+
+    /* NOTE : MOVIL SIZE */
+    @media (max-width: 580px) {
+        flex-direction: column;
+        min-width: 10px;
+        max-width: 100%;
+        height: 500px;
+        margin: 10px 0;
+    }
+}
+
+.expandVideo {
+    min-width: 10px;
+    max-width: 100%;
+}
+
+.lvr-organism_info_cont {
+    background: var(--lvr_color_info_background);
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    color: var(--lvr_color_txt_info);
+
+    /* NOTE : MOVIL SIZE */
+    @media (max-width: 580px) {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+
+    & header {
+        display: flex;
+        justify-content: space-between;
+        background: var(--lvr_color_info_navbar_background);
+        height: 25px;
+
+        & section {
+            display: flex;
+            margin: auto 10px;
+
+            & span {
+                height: 7px;
+                width: 7px;
+                margin: auto 3px;
+                border-radius: 50%;
+            }
+            .lvr-point_1 {
+                background: var(--lvr_color_info_pont_1);
+            }
+            .lvr-point_2 {
+                background: var(--lvr_color_info_pont_2);
+            }
+            .lvr-point_3 {
+                background: var(--lvr_color_info_pont_3);
+            }
+        }
+
+        .version {
+            background: red;
+        }
+
+        .lvr-colse-button {
+            display: flex;
+            background: none;
+            height: 15px;
+            width: 15px;
+            padding: 0;
+            margin: auto 5px;
+            border: none;
+            opacity: 0.8;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    & section {
+        margin: 0px 10px;
+
+        & hr {
+            border: none;
+            border-top: 1px solid var(--lvr_color_list_border);
+        }
+    }
+
+}
+
+.superimpose {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    opacity: 70%;
+}
+
+.lvr-organism_contSections {
+    width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    & h2 {
+        text-align: center;
+        margin: 0;
+    }
+
+    #lvr-select_sections {
+        margin: 10px auto;
+    }
+
+    & select {
+        background: var(--lvr_color_background_subcont_2);
+        color: var(--lvr_color_txt_info);
+        padding: 5px 10px;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .contSections {
+        width: 100%;
+        height: 100px;
+        background: var(--lvr_color_info_navbar_background);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & section {
+            background: var(--lvr_color_background_sections);
+            color: white;
+            font-weight: bold;
+            padding: 2px 4px 2px 7px;
+            margin: 10px;
+            display: flex;
+            height: 20px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            font-size: smaller;
+
+            & span {
+                display: flex;
+                margin: 0 0 0 5px;
+                height: 16px;
+                width: 16px;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 80%;
+                }
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        justify-content: center;
+
+        & button {
+            background: var(--lvr_color_button_2);
+            border: none;
+            margin: 15px 5px 0 5px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            color: var(--lvr_color_button-text);
+            cursor: pointer;
+
+            &:hover {
+                opacity: 80%;
+            }
+        }
+        .btn_acept {
+            background: var(--lvr_color_button_1);
+        }
+    }
+}
+
+:root {
+    /* NOTE : COLOR EDITOR */
+    --color-lvr-code-text: #e9e9e9;
+    --color-lvr-code-menu_list: #303846;
+    --color-lvr-code-menu_list-border: #56647c;
+    --color-lvr-code-menu_list-text: #e6e6e6;
+    --color-lvr-code-menu_list-text-hover: #575E65;
+    --color-lvr-code-eyelash: #212930;
+    --color-lvr-code-eyelash-line: #4DACFD;
+    --color-lvr-code-eyelash-text: #e1e4e7;
+    --color-lvr-code-eyelash-unsave: aqua;
+    --color-lvr-code-options-hover: #575E65;
+}
+
+.organism_navTools {
+    width: 100%;
+    height: 40px;
+    display: flex;
+
+    & aside {
+        border-top: 3px solid var(--color-lvr-code-eyelash-line);
+        height: calc(100% - 3px);
+        padding: 0;
+        display: flex;
+        background: var(--color-lvr-code-eyelash);
+        margin: 0;
+        width: 80px;
+
+        & p {
+            margin: auto 10px;
+            font-size: smaller;
+            color: var(--color-lvr-code-eyelash-text);
+            opacity: 0.7;
+            display: flex;
+            /* background: green; */
+            align-items: center;
+
+            & mark {
+                font-weight: bold;
+                opacity: 1;
+            }
+        }
+    }
+
+    .unsave {
+        border-top: 3px solid var(--color-lvr-code-eyelash-unsave);
+    
+        & p {
+            color: var(--color-lvr-code-eyelash-unsave);
+            display: flex;
+            opacity: 1;
+
+            & mark {
+                background: none;
+                color: var(--color-lvr-code-eyelash-unsave);
+            }
+        }
+    }
+
+    & section {
+        height: 15px;
+        width: 15px;
+        margin: auto 5px;
+        display: flex;
+        padding: 5px;
+        border-radius: 3px;
+        opacity: 0.8px;
+        cursor: pointer;
+
+        &:hover {
+            background: var(--color-lvr-code-options-hover);
+            opacity: 1;
+            transition: 0.2s;
+        }
+
+        & li {
+            position: relative;
+            list-style-type: none;
+
+            .btn_option_edit {
+                background: none;
+                padding: 0 15px 0 0;
+                margin: 0;
+                height: 100%;
+                border: none;
+                display: flex;
+                height: 15px;
+                width: 15px;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 3px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid white;
+                    
+                }
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: var(--color-lvr-code-menu_list);
+                border: 1px solid var(--color-lvr-code-menu_list-border);
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                border-radius: 5px;
+                z-index: 1;
+                right: -1px;
+                top: calc(100% + 5px);
+            }
+            
+            .dropdown-content ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .dropdown-content ul li {
+                padding: 5px 10px;
+                text-decoration: none;
+                color: var(--color-lvr-code-menu_list-text);
+                cursor: pointer;
+                font-size: smaller;
+            }
+            
+            .dropdown-content ul li:hover {
+                background-color: var(--color-lvr-code-menu_list-text-hover);
+            }
+            
+            .show {
+                display: block;
+            }
+        }
+    }
+
+    .list {
+        padding: 5px 18px 5px 5px;
+    }
+}

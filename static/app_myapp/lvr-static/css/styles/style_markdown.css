@@ -1,0 +1,287 @@
+:root {
+    --mark-color-general_background: #191B1F;
+    --mark-color-code-background: #282C34;
+    --mark-color-text: #c4c4c4;
+    --mark-color-line_code_bg: #3257ce54;
+    --mark-color-line_code: #85a1ff;
+    --mark-color-text_link: #3a85ff;
+    --mark-color-hr_line: #ffffff59;
+    --mark-color-bold_text: #ececec;
+    --mark-color-cursive_text: #cb894c;
+    --mark-color-table_border: #4d4f57;
+    --mark-color-table_background: #303436;
+    --mark-color-table_odd: #222425;
+    --mark-color-table_text: #ececec;
+    --mark-color-textbox_background: #303942;
+    --mark-color-textbox_border: #545759;
+    --mark-color_textbox_text: #9A9EA2;
+    /* Checkbox */
+    --mark-color-checkbox_border: #0071F6;
+    --mark-color-checkbox_background: #0071F6;
+    /* Bloquete */
+    --mark-color-blockquote: #0096bfab;
+    /* Details */
+    --mark-color-details_background: #1f262e;
+    --mark-color-details_border: #313d4a;
+    --mark-color-details_border-open: #c3f3493d;
+    --mark_color-details-text_general: #ccc;
+    --mark_color-details-text_sumary: #fff;
+    --mark_color-details-text_sumary-open: #fff;
+    --mark_color-details-background_sumary-hover: #313d4a;
+    --mark_color-details-background_sumary-open: #313d4a;
+    /* mark */
+    --mark_color-mark_background: #71e92c3d;
+}
+
+#content {
+    padding: 30px;
+}
+
+pre {
+    background: var(--mark-color-code-background);
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 10px 0;
+
+    & code {
+        background: none;
+        color: var(--mark-color-text);
+        padding: 0;
+        border-radius: 0;
+    }
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+    margin: 30px 0 10px 0;
+}
+
+p {
+    margin: 10px 0px;
+    line-height: 1.3;
+}
+
+ul {
+    padding-left: 25px;
+
+    & li {
+        line-height: 1.3;
+        font-size: small;
+    }
+}
+a {
+    color: var(--mark-color-text_link);
+    opacity: 1;
+}
+hr {
+    border: none;
+    border-bottom: 1px solid var(--mark-color-hr_line);
+    margin: 15px 0px;
+}
+
+strong {
+    color: var(--mark-color-bold_text);
+    font-weight: bold;
+}
+
+ul {
+    font-size: smaller;
+
+    & li {
+        margin: 8px 0;
+    }
+}
+
+code {
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    font-size: small;
+    background: var(--mark-color-line_code_bg);
+    color: var(--mark-color-line_code);
+    padding: 1px 5px;
+    border-radius: 5px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--mark-color-checkbox_border);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--mark-color-checkbox_background);
+}
+
+input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 12px;
+    display: none;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "\2713"; /* Unicode para el símbolo de checkmark ✓ */
+    display: block; /* Mostrar el símbolo cuando está marcado */
+}
+
+table {
+    border-collapse: collapse;
+    font-size: smaller;
+
+    & tr {
+        padding: 10px;
+        color: var(--mark-color-table_text);
+        background: var(--mark-color-table_background);
+    }
+
+    & th {
+        background-color: var(--mark-color-table_odd);
+    }
+
+    & th, td {
+        padding: 10px;
+        border: 1px solid var(--mark-color-table_border);
+    }
+
+    /* tr:nth-child(odd) {
+    } */
+    
+    tr:nth-child(even) {
+        background-color: var(--mark-color-table_odd);
+    }
+}
+
+input[type="text"] {
+    width: calc(100% - 10px);
+    background: var(--mark-color-textbox_background);
+    padding: 10px 5px;
+    border: 1px solid var(--mark-color-textbox_border);
+    border-radius: 3px;
+    color: var(--mark-color_textbox_text);
+    margin: 5px 0;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+blockquote {
+    border-left: 4px solid var(--mark-color-blockquote);
+    font-size: smaller;
+    margin: 1em 0;
+    padding: 0.1em 1em;
+    font-style: italic;
+
+    & em {
+        color: var(--mark-color-text);
+    }
+}
+
+blockquote > footer {
+font-style: normal;
+border: 0;
+}
+  
+blockquote cite {
+font-style: normal;
+}
+
+ol {
+    counter-reset: item;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+ol li {
+    counter-increment: item;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var();
+    position: relative;
+    color: var(--mark-color-text);
+
+    font-size: smaller;
+}
+
+ol li::before {
+    content: counters(item, ".") " ";
+    position: absolute;
+    left: -15px;
+    font-weight: bold;
+    color: var(--mark-color-text);
+}
+
+ol li:last-child {
+    margin-bottom: 0;
+}
+
+details {
+    background-color: var(--mark-color-details_background);
+    border: 1px solid var(--mark-color-details_border);
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--mark_color-details-text_general);
+    font-family: 'Arial', sans-serif;
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+
+    & a {
+        margin: 10px 0 0 0;
+    }
+}
+
+summary {
+    color: var(--mark_color-details-text_sumary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+summary:hover {
+    background-color: var(--mark_color-details-background_sumary-hover);
+}
+
+details[open] {
+    border-color: var(--mark-color-details_border-open);
+}
+
+details[open] summary {
+    background-color: var(--mark_color-details-background_sumary-open);
+    color: var(--mark_color-details-text_sumary-open);
+}
+
+em {
+    font-style: italic;
+    color: var(--mark-color-cursive_text);
+}
+
+mark {
+    color: var(--mark-color-text);
+    background: var(--mark_color-mark_background);
+    padding: 2px;
+    border-radius: 2px;
+}
+
+sup {
+    font-size: smaller;
+    margin: 0 0 0 10px;
+}

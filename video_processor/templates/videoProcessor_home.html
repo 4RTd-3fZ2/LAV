@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDEO - PROECESSOR</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'app_video_processor/img/myicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'app_video_processor/styles/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'app_video_processor/styles/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'app_video_processor/styles/index/templates.css' %}">
+    <link rel="stylesheet" href="{% static 'app_video_processor/styles/index/organisms.css' %}">
+    <link rel="stylesheet" href="{% static 'app_video_processor/styles/index/molecules.css' %}">
+    <link rel="stylesheet" href="{% static 'app_video_processor/styles/index/atoms.css' %}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+</head>
+<body class="template_body">
+    <dialog id="myDialog" class="cedema_dialog">
+        <form method="dialog">
+            <div class="dialogHeader">
+                <aside></aside>
+                <h1>Mover video a LAV</h1>
+                <button class="close">
+                    <svg height="100%" viewBox="0 0 43.25 43.25" xml:space="preserve">
+                    <path fill="#fff" d="M1.46,1.46c1.95-1.95,5.11-1.95,7.06,0l13.11,13.11L34.73,1.46c1.95-1.95,5.11-1.95,7.06,0
+                    c1.95,1.95,1.95,5.11,0,7.06L28.68,21.63l13.11,13.11c1.95,1.95,1.95,5.11,0,7.06s-5.11,1.95-7.06,0L21.63,28.68L8.52,41.79
+                    c-1.95,1.95-5.11,1.95-7.06,0c-1.95-1.95-1.95-5.11,0-7.06l13.11-13.11L1.46,8.52C-0.49,6.57-0.49,3.41,1.46,1.46z"/>
+                    </svg>
+                </button>
+            </div>
+            <hr>
+            <section>
+                 <div class="select">
+                    <select id="selectCategory">
+                        <option value="">Category</option>
+                    </select>
+                    <select id="selectStacks">
+                        <option value="n1">Stack_n1</option>
+                        <option value="n2">Stack_n2</option>
+                        <option value="n3">Stack_n3</option>
+                        <option value="n4">Stack_n4</option>
+                        <option value="n5">Stack_n5</option>
+                        <option value="n6">Stack_n6</option>
+                        <option value="n7">Stack_n7</option>
+                        <option value="n8">Stack_n8</option>
+                        <option value="n9">Stack_n9</option>
+                        <option value="n10">Stack_n10</option>
+                    </select>
+                 </div>
+                 <div id="info_lav" class="info">
+                    <!-- STUB : INFO -->
+                 </div>
+                 <button id="btn_mover">Mover</button>
+            </section>
+        </form>
+    </dialog>
+    <div class="template_cont style_RES_CONT">
+        <aside>
+            <section class="cont_viwer">
+                <div class="organism_fileOutput">
+                    <p>Video View</p>
+                    <nav id="cont_video" class="cont_viewer">
+                        <nav class="video" id="video_output" style="display: none;">
+                            <!-- STUB - CAPTURE VIWER -->
+                        </nav>
+                        <div class="cont_select_video" id="open_video_cont">
+                            <input type="file" id="video_file" name="archivo" accept=".mp4">
+                            <label id="label_file" for="video_file">Arrastra el video aquí</label>
+                        </div>
+                    </nav>
+                    <div class="molecule_buttonsVideo_cont">
+                        <div class="controllers_btn">
+                            <button id="btn_volume">
+                                <img src="{% static 'app_video_processor/img/volume.png' %}" alt="">
+                            </button>
+                            <button id="btn_next2">
+                                <img src="{% static 'app_video_processor/img/next2.png' %}" alt="">
+                            </button>
+                            <button id="btn_pause_play">
+                                <img src="{% static 'app_video_processor/img/pause_play.png' %}" alt="">
+                            </button>
+                            <button id="btn_next1">
+                                <img src="{% static 'app_video_processor/img/next1.png' %}" alt="">
+                            </button>
+                            <button id="btn_slow">
+                                <img src="{% static 'app_video_processor/img/slow.png' %}" alt="">
+                            </button>
+                            <button id="btn_clear">
+                                <img src="{% static 'app_video_processor/img/clear.png' %}" alt="">
+                            </button>
+                            <button id="btn_fast">
+                                <img style="height: 80%;" src="{% static 'app_video_processor/img/fast.png' %}" alt="">
+                            </button>
+                        </div>
+                        <button id="move_before">
+                            <img src="{% static 'app_video_processor/img/move_before.png' %}" alt="">
+                        </button>
+                        <button id="move_after">
+                            <img src="{% static 'app_video_processor/img/move_after.png' %}" alt="">
+                        </button>
+                        <button id="btn_capture" >
+                            <img src="{% static 'app_video_processor/img/icon_capture.png' %}" alt="">
+                        </button>
+                        <button id="btn_expand" >
+                            <img src="{% static 'app_video_processor/img/expand.png' %}" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="organism_code">
+                    <div class="subtitle">
+                        <p>Insertar Código</p>
+                        <button id="copy_code"> <img src="{% static 'app_video_processor/img/icon_copy.png' %}" alt=""> Copiar</button>
+                        <select class="atom_comboboxStack" id="select_stack">
+                            <option value="1">Stack 1</option>
+                            <option value="2">Stack 2</option>
+                            <option value="3">Stack 3</option>
+                            <option value="4">Stack 4</option>
+                        </select>
+                        <div>
+                            Total de videos:
+                            <input type="text" value="" name="" id="total_videos" disabled>
+                        </div>
+                    </div>
+                    <code>
+                        <div id="insert_code">
+                            <!-- STUB - CODE INSERT -->
+                        </div>
+                    </code>
+                </div>
+                <div class="organism_code">
+                    <div class="molecule_navbarFile">
+                        <p class="organism_th_1 tittle_file">Titulo</p>
+                        <p class="organism_th_2">IMG</p>
+                        <p class="organism_th_3">Acción</p>
+                    </div>
+                    <div class="organism_listFile">
+                        <table id="table_videos">
+                            <!-- STUB - TABLE GENERATED -->
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="atoms_navSettings">
+                    <p>Screen</p>
+                </div>
+                <div class="organism_firsSettings">
+                    <nav style="height: 50px;" class="captura" id="captura_output">
+                        <!-- STUB - VIDEO VIWER -->
+                        <!-- <div style="width: 100%; height: 100%;background: black;"></div> -->
+                    </nav>
+                    <div class="molecule_buttonsVideo_cont">
+                        <button id="charger_capture">
+                            <img src="{% static 'app_video_processor/img/add_imgIcon.png' %}" alt="">
+                        </button>
+                        <button id="btn_download">
+                            <img src="{% static 'app_video_processor/img/icon_download.png' %}" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="atoms_navSettings">
+                    <p>Settings</p>
+                </div>
+                <div class="organism_firsSettings">
+                    <div class="atom_conservarCambios">
+                        <input type="checkbox" id="confi_keep" name="confichanges" value="1">
+                        <label for="confi_keep">Conservar Configuración</label>
+                    </div>
+                    <div class="espacio_uno">
+                        <select id="seleccion_category" name="seleccion">
+                            <option value="">Categorias</option>
+                            <!-- STUB - SELECTOR DE GUIAS -->
+                        </select>
+                        <span>Acronimo: <input maxlength="2" id="id_acronime" type="text" value="" name="" disabled></span>
+                        <span>Código: <input id="id_code" type="text" value="" name="" disabled></span>
+                    </div>
+
+                    <div class="espacio_dos">
+                        <p>Posición del video:</p>
+                        <div class="cont_radios">
+                            <div class="myradio">
+                                <label for="opcion1">Horizontal (H)</label>
+                                <input type="radio" id="option_pH" name="optionPosition" value="pH" checked>
+                            </div>
+                            <div class="myradio">
+                                <label for="opcion2">Vertical (V)</label>
+                                <input type="radio" id="option_pV" name="optionPosition" value="pV">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="atoms_navSettings">
+                    <p>Inputs</p>
+                </div>
+                <div class="organism_input">
+                    <div class="atom_conservarCambios">
+                        <!-- <input type="radio" id="descript_keep" name="descriptchanges" value="1"> -->
+                        <input type="checkbox" id="descript_keep" name="descriptchanges" value="1">
+                        <label for="descript_keep">Conservar Descripción</label>
+                    </div>
+                    <div class="cont_desq">
+                        <p>titulo/Brebe Descripción</p>
+                        <div class="cont_text">
+                            <textarea id="id_title" name="tittle" rows="2" cols="50" maxlength="70"></textarea>
+                            <span id="total_description">0/70</span>
+                        </div>
+
+                        <!-- VIOSUALIZACION DE IMAGEN DE VIDEO -->
+                        <div class="cont_viewImg">
+                            <div id="id_only_imgs">
+                            </div>
+                            <input type="file" id="image_file" name="archivo" accept=".jpg" hidden>
+                            <label for="image_file"><img src="/static/app_video_processor/img/add_imgIcon.png" alt=""></label>
+                            <label id="deleted_images"><img src="/static/app_video_processor/img/deleted.png" alt=""></label>
+
+                            <!-- <button></button> -->
+                        </div>
+                        <div class="names_view" id="names_references">
+                            <!-- STUB - NAMES VIEW OF VIDEO AND IMAGES -->
+                        </div>
+                        <input type="submit" id="id_submit" value="Subir Archivo">
+                        <input type="submit" id="move_lav" value="Mover Archivos subidos a LAV">
+                        <div class="organism_buttons">
+                            <button id="id_clear" class="clear">LIMPIAR</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script type="module" src="{% static 'js/main.js' %}"></script> -->
+    <script type="module" src="{% static 'app_video_processor/main.js' %}"></script>
+</body>
+</html>
