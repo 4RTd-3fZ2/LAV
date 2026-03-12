@@ -1,0 +1,25 @@
+media
+**/*.pyc
+.vscode/
+.env
+.DS*
+
+process.md
+handbook.md
+
+**/*.rar
+
+# Videos y Sectores LAV
+videos
+images
+ESvideos
+LGvideos
+RPvideos
+TRvideos
+VRvideos
+ZKvideos
+YOvideos
+ENvideos
+PSvideos
+# Archivos remporales de vim
+*.un~
